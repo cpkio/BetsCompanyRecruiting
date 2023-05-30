@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="Untitled">
+    <title>Получение списка записей календаря</title>
+    <shortdesc>Запрос <b>GET</b>
+        <codeph>http://domain.com/Calendar</codeph> позволяет получить в формате JSON список записей
+        календаря в пределах заданных дат.</shortdesc>
+    <body>
+        <section>
+            <title>Адрес запроса</title>
+            <p><b>GET</b>
+                <codeph>http://domain.com/Calendar</codeph></p>
+        </section>
+        <section id="section_lvx_51g_qxb">
+            <title>Параметры запроса</title>
+            <simpletable frame="none" relcolwidth="1* 1* 1* 1* 1*" id="simpletable_wgn_vxf_qxb">
+                <sthead>
+                    <stentry>Тип</stentry>
+                    <stentry>Имя</stentry>
+                    <stentry>Обязательность</stentry>
+                    <stentry>Значение по умолчанию (отсутствие параметра)</stentry>
+                    <stentry>Описание</stentry>
+                </sthead>
+                <strow>
+                    <stentry>int</stentry>
+                    <stentry>tfDays</stentry>
+                    <stentry>нет</stentry>
+                    <stentry>1 (завтрашний календарный день)</stentry>
+                    <stentry>Начальная дата списка событий календаря. Может принимать отрицательные
+                        значения</stentry>
+                </strow>
+                <strow>
+                    <stentry>int</stentry>
+                    <stentry>afterDays</stentry>
+                    <stentry>нет</stentry>
+                    <stentry>7 (день, отстоящий на 7 календарных дней от текущего)</stentry>
+                    <stentry>Конечная дата списка событий календаря. Может принимать отрицательные
+                        значения</stentry>
+                </strow>
+            </simpletable>
+            <note id="note_r2v_rcg_qxb" type="important"><p>Список событий календаря, возвращаемый
+                    методом, зависит не только от даты, но и от времени запроса.</p>
+                <p/>
+            </note>
+        </section>
+        <section id="section_grt_51g_qxb">
+            <title>Примеры запросов</title>
+            <example id="example_ywx_51g_qxb">
+                <title>Запрос со значениями по умолчанию</title>
+                <pre>curl --location --request GET 'https://domain.com/Calendar'</pre>
+                <p>В отсутствие параметров такой запрос идентичен запросу
+                        <codeph>https://domain.com/Calendar?tfDays=1&amp;afterDays=7</codeph>.
+                    Запрос возвратит список событий календаря, начинающихся с завтрашнего
+                    календарного дня и по дату, отстоящую на 7 календарных дней (через неделю) от
+                    текущей даты.</p>
+            </example>
+            <example id="example_f33_4bg_qxb">
+                <title>Запрос событий календаря за вчерашний день</title>
+                <pre>curl --location --request GET 'https://domain.com/Calendar?tfDays=-2&amp;afterDays=-1'</pre>
+                <p>Запрос возвратит список событий календаря, начинающихся с завтрашнего
+                    календарного дня и по дату, отстоящую на 7 календарных дней (через неделю) от
+                    текущей даты.</p>
+            </example>
+            <example id="example_atm_4bg_qxb">
+                <title>Запрос событий календаря за сегодняшний день</title>
+                <pre>curl --location --request GET 'https://domain.com/Calendar?tfDays=-1&amp;afterDays=0'</pre>
+                <p>Запрос возвратит список событий календаря, начинающихся с завтрашнего
+                    календарного дня и по дату, отстоящую на 7 календарных дней (через неделю) от
+                    текущей даты.</p>
+            </example>
+        </section>
+        <section id="section_mvx_51g_qxb">
+            <p/>
+        </section>
+    </body>
+</topic>
