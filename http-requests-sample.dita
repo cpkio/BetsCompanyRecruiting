@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="Untitled">
+    <title>Примеры HTTP-запросов к API</title>
+    <topic id="topic_zgc_hqg_qxb">
+        <title>GET <codeph>http://domain.com/Events</codeph></title>
+        <body>
+            <example/>
+        </body>
+    </topic>
+    <topic id="topic_amk_hqg_qxb">
+        <title>POST <codeph>http://domain.com/Event</codeph></title>
+        <body>
+            <example/>
+        </body>
+    </topic>
+</topic>
