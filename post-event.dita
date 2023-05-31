@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_amk_hqg_qxb">
+    <title>Создание события: <b>POST</b>
+        <codeph>http://domain.com/Event</codeph></title>
+    <topic id="topic_el1_nkk_qxb">
+        <title>Создание события</title>
+        <body>
+            <example><pre><b>POST</b> http://domain.com/Event?Name="Название события"</pre>
+                <p>Будет создано событие с названием «Название события» и текущим временем сервера.
+                    Тип события не задан.</p>
+                <note id="note_khx_p1l_qxb" type="important">При создании события задание ему имени
+                    (свойство <codeph>Name</codeph>) является обязательным.</note></example>
+        </body>
+    </topic>
+    <topic id="topic_gl1_nkk_qxb">
+        <title>Создание события с заданным временем</title>
+        <body>
+            <example><pre><b>POST</b> http://domain.com/Event?Name="Название события"&amp;Start=1685534400</pre>
+                <p>Будет создано событие с отметкой времени 31.05.2023 12:00 и названием
+                    «Название события».</p></example>
+        </body>
+    </topic>
+    <topic id="topic_hl1_nkk_qxb">
+        <title>Создание события с заданным типом</title>
+        <body>
+            <example><pre><b>POST</b> http://domain.com/Event?Name="Название события"&amp;Type=3</pre>
+                <p>Будет создано событие с названием «Название события» и типом «Работа».</p>
+                <table id="table_uh2_b5k_qxb" frame="none">
+                    <title>Типы событий</title>
+                    <tgroup cols="2">
+                        <colspec colname="c1" colnum="1" colwidth="1*"/>
+                        <colspec colname="c2" colnum="2" colwidth="1*"/>
+                        <thead>
+                            <row>
+                                <entry>Тип события</entry>
+                                <entry>Код типа события (> 0)</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Личное</entry>
+                                <entry>1</entry>
+                            </row>
+                            <row>
+                                <entry>Семья</entry>
+                                <entry>2</entry>
+                            </row>
+                            <row>
+                                <entry>Работа</entry>
+                                <entry>3</entry>
+                            </row>
+                            <row>
+                                <entry>Нет типа (значение по умолчанию)</entry>
+                                <entry>4</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table></example>
+        </body>
+    </topic>
+    <topic id="topic_il1_nkk_qxb">
+        <title>Создание события с описанием</title>
+        <body>
+            <example><pre><b>POST</b> http://domain.com/Event?Name="Название события"&amp;Note="Описание события"</pre>
+                <p>Будет создано событие с названием «Название события» и описанием «Описание
+                    события».</p></example>
+        </body>
+    </topic>
+<!--    <topic id="topic_jl1_nkk_qxb">
+        <title/>
+        <body>
+            <example><pre/></example>
+        </body>
+    </topic>
+    <topic id="topic_kl1_nkk_qxb">
+        <title/>
+        <body>
+            <example><pre/></example>
+        </body>
+    </topic>
+    <topic id="topic_ll1_nkk_qxb">
+        <title/>
+        <body>
+            <example><pre/></example>
+        </body>
+    </topic>-->
+</topic>

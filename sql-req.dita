@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="untitled1">
+    <title>Получение из БД списка пользователей с заданной фамилией</title>
+    <shortdesc>Получить из базы данных список лиц с заданной фамилией можно с помощью
+        SQL-запроса.</shortdesc>
+    <body>
+        <section>
+            <title>Схема таблицы</title>
+            <codeblock id="codeblock_az2_yfk_qxb">CREATE TABLE users (
+             id        INTEGER      PRIMARY KEY,
+             firstName VARCHAR (30) NOT NULL,
+             lastName  VARCHAR (30) NOT NULL
+             );</codeblock>
+        </section>
+        <section>
+            <title>Запрос, возвращающий список пользователей с фамилией «Иванов» или
+                «Иванова»</title>
+            <p><pre id="pre_nyl_rmh_qxb">SELECT * FROM users WHERE lastName LIKE "Иванов%";</pre>
+                где <codeph>%</codeph> — шаблон, обозначающий ноль или более символов. </p>
+        </section>
+    </body>
+</topic>
